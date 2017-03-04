@@ -53,7 +53,7 @@ Index
       <ul>
 	{% for beer in beers %}
 	<ul class='item_card'>
-  <button type="button" class="btn btn-secondary btn-lg" onclick="window.location='{% url 'show_beer' beer.slug %}'">{{ beer.title }}</button>
+  <button type="button" class="btn btn-secondary btn-lg" onclick="window.location='{% url 'show_beer' beer.slug %}'">{{ beer.name }}</button>
 	</ul>
 	{% endfor %}
       </ul>

@@ -26,7 +26,7 @@ class Beer(models.Model):
         return "/taps_oan/beer/%s/" % self.slug
 
     def save(self, *args, **kwargs):
-        setattr(self, 'title', self.name.title())
+        setattr(self, 'name', self.name.title())
         self.slug = slugify(self.name)
         super(Beer, self).save(*args, **kwargs)
 

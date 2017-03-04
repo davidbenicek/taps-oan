@@ -7,7 +7,7 @@
 
 {% block body_block %}
 	{% if beer %}
-	<h1>Add a pub that carries {{ beer.title }}</h1>
+	<h1>Add a pub that carries {{ beer.name }}</h1>
 	<div>
 		<form id="carrier_form" method="post" action="/taps_oan/beer/{{ beer.slug }}/add_carrier/">
 			{% csrf_token %}

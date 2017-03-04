@@ -18,31 +18,31 @@ def populate():
     # through each data structure, and add the data to our models.
 
     arbitrary_beers = [
-        {"title": "Joker IPA",
+        {"name": "Joker IPA",
          "views": "1"},
-        {"title": "Tennents",
+        {"name": "Tennents",
          "views": "2"},
-        {"title": "Coors Light",
+        {"name": "Coors Light",
          "views": "4"},
-        {"title": "West",
+        {"name": "West",
          "views": "8"},
-        {"title": "Guiness",
+        {"name": "Guiness",
          "views": "10"},
-        {"title": "Punk IPA",
+        {"name": "Punk IPA",
          "views": "13"},
-        {"title": "Carling",
+        {"name": "Carling",
          "views": "17"},
-        {"title": "Carlsberg",
+        {"name": "Carlsberg",
          "views": "22"},
-        {"title": "Heineken",
+        {"name": "Heineken",
          "views": "26"},
-        {"title": "Staropramen",
+        {"name": "Staropramen",
          "views": "29"},
-        {"title": "Brooklyn Lager",
+        {"name": "Brooklyn Lager",
          "views": "33"},
-        {"title": "John Smith",
+        {"name": "John Smith",
          "views": "41"},
-        {"title": "Strongbow",
+        {"name": "Strongbow",
          "views": "54"}]
 
     arbitrary_pubs = [
@@ -62,7 +62,7 @@ def populate():
          "views": "23"}]
 
     for beer in arbitrary_beers:
-        add_beer(beer["title"], beer["views"])
+        add_beer(beer["name"], beer["views"])
 
     for pub in arbitrary_pubs:
         p = add_pub(pub["name"], pub["views"])
@@ -83,8 +83,8 @@ def add_pub(name, views):
     return p
 
 
-def add_beer(title, views):
-    b = Beer.objects.get_or_create(title=title)[0]
+def add_beer(name, views):
+    b = Beer.objects.get_or_create(name=name)[0]
     b.views = views
     b.save()
     return b

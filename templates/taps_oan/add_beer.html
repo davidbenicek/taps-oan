@@ -6,7 +6,7 @@
 
 {% block body_block %}
 	{% if pub %}
-		<h1>Add a Beer to {{pub.name}}</h1>
+		<h1>Add a Beer to {{ pub.name }}</h1>
 		<div>
 			<form id="beer_form" method="post" action="/taps_oan/pub/{{ pub.slug }}/add_beer/">
 				{% csrf_token %}
