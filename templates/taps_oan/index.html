@@ -20,11 +20,12 @@ Index
 
 {% block body_block %}
   <!-- Page Content -->
+
   <hr class="featurette-divider">
 
   <!-- First Featurette -->
   <div class="featurette" id="about">
-    <div class="pull-right img-responsive">
+   <div class="float-right img-fluid">
       {% if pubs %}
       	{% for pub in pubs %}
       	<ul class='item_card'>
@@ -48,7 +49,7 @@ Index
 
   <!-- Second Featurette -->
   <div class="featurette" id="services">
-    <div class="pull-right img-responsive">
+   <div class="float-right img-fluid">
       {% if beers %}
       <ul>
 	{% for beer in beers %}

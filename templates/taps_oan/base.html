@@ -12,14 +12,25 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{% static "images/icon.png" %}">
     <title>
-        Taps-Oan -
+        Taps-Oan
         {% block title_block %}
             Let the pints flow through ye.
         {% endblock %}
     </title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+        <!-- Bootstrap Core CSS -->
+    <!-- Bootstrap Core JavaScript -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
 
     <!-- Custom CSS -->
     <link href="{% static "css/main.css" %}" rel="stylesheet">
@@ -30,72 +41,72 @@
 </head>
 
 <body>
-<div class="container">
+
 <!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse bg-inverse fixed-top navbar-toggleable-sm mx-auto"
+     role="navigation">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Taps-Oan</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="{% url 'about' %}">About</a></li> 
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'account' %}">Account</a></li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                {% else %}
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                    <li><a href="{% url 'register' %}">Register</a></li>
-                {% endif %}
-            </ul>
-        </div>
+<!-- Brand and toggle get grouped for better mobile display -->
+        <button type="button" class="navbar-toggler float-right hidden-md-up"
+                data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">☰
+        </button>
+        <a class="navbar-brand" href="/">Taps-Oan</a>
+        <!-- Collect the
+        nav links, forms, and other content for toggling -->
+        <ul class="nav navbar-nav">
+            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a>
+            </li>{% if user.is_authenticated %}
+            <li class="nav-item"><a href="{% url 'account' %}" class="nav-link">Account</a>
+            </li>
+            <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout</a>
+            </li>{% else %}
+            <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Login</a>
+            </li>
+            <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Register</a>
+            </li>{% endif %}</ul>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
 </nav>
+
 <link rel="shortcut icon" type="image/png" href="{{ MEDIA_URL}}/favicon.ico"/>
+<div class="container-fluid">
 {% block header_block %}
+
 {% endblock %}
-
-
-
+<div class="container">
     {% block body_block %}
 
-    {% endblock %}
 
+    {% endblock %}
+</div>
 
     <footer>
-        <div class="navbar">
+        <div class="navbar navbar-toggleable-sm">
             <div class="row">
-                <div class="col-lg-offset-0">
-                <b>Team R</b>
-                <div>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a>
-                    from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a
-                            href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
-                            target="_blank">CC 3.0 BY</a></div>
-                <div>Banner image credit goes to <a
-                        href="https://pixabay.com/en/beer-beverage-drink-alcohol-glass-681807/">tykejones</a></div>
+                <div class="offset-lg-0"><b>Team R</b>
+                    <div>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a>
+                        from
+                        <a
+                                href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>is licensed by <a
+                                href="http://creativecommons.org/licenses/by/3.0/"
+                                title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+                    </div>
+                    <div>Banner image credit goes to <a
+                            href="https://pixabay.com/en/beer-beverage-drink-alcohol-glass-681807/">tykejones</a>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </footer>
 
 
 </div>
 <!-- /.container -->
+</div>
 
-
-<!-- Bootstrap Core JavaScript -->
-<script src="{% static "js/bootstrap.min.js" %}"></script>
+<!-- Bootstrap Core JavaScript
+<script src="{% static "js/bootstrap.min.js" %}"></script>-->
 
 </body>
 </html>

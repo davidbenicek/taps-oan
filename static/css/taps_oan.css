@@ -2,3 +2,9 @@
 #cust_form  p input{
     width: 100%;
 }
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
