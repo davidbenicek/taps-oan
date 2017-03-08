@@ -5,18 +5,20 @@
 {% endblock %}
 
 {% block body_block %}
+
 <h1>About Taps Oan</h1>
 <br>
         
-<div>
+<div class="row">
   <h3>Taps Oan was founded during a stressful time. Coursework was piling up, dissertation deadlines were looming - but this only further ignited our desire for a cold, soothing pint. We know some of you may be in the same situation, so we brought you this light in the dark.</h3> <br />
 </div>
 
 And a picture of a cat.
-<div>
+<div >
   <img src={{ MEDIA_URL}}cat.jpg
-       alt="Picture of a cat" />
+       class="img-fluid" alt="Picture of a cat" />
 </div>
 <br>
-<p> visits: {{ visits }}</p>    
+<p> visits: {{ visits }}</p>
+    </div>
 {% endblock %}

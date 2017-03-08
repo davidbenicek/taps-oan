@@ -45,15 +45,15 @@
 <!-- Navigation -->
 <nav class="navbar navbar-inverse bg-inverse fixed-top navbar-toggleable-sm mx-auto"
      role="navigation">
-    <div class="container">
+
 <!-- Brand and toggle get grouped for better mobile display -->
-        <button type="button" class="navbar-toggler float-right hidden-md-up"
-                data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">☰
+        <button type="button" class="navbar-toggler navbar-toggler-right "
+                data-toggle="collapse" data-target="#nav-content">☰
         </button>
         <a class="navbar-brand" href="/">Taps-Oan</a>
-        <!-- Collect the
-        nav links, forms, and other content for toggling -->
-        <ul class="nav navbar-nav">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="nav-content">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
             <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a>
             </li>{% if user.is_authenticated %}
             <li class="nav-item"><a href="{% url 'account' %}" class="nav-link">Account</a>
@@ -63,9 +63,11 @@
             <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Login</a>
             </li>
             <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Register</a>
-            </li>{% endif %}</ul>
-        <!-- /.navbar-collapse -->
+            </li>{% endif %}
+        </ul>
     </div>
+        <!-- /.navbar-collapse -->
+
     <!-- /.container -->
 </nav>
 
