@@ -18,7 +18,7 @@ def populate():
     # through each data structure, and add the data to our models.
 
     arbitrary_beers = [
-        {"name": "Joker IPA",
+        {"name": "Budweiser",
          "views": "1"},
         {"name": "Tennents",
          "views": "2"},
@@ -28,7 +28,7 @@ def populate():
          "views": "8"},
         {"name": "Guiness",
          "views": "10"},
-        {"name": "Punk IPA",
+        {"name": "Stella Artois",
          "views": "13"},
         {"name": "Carling",
          "views": "17"},
@@ -46,9 +46,9 @@ def populate():
          "views": "54"}]
 
     arbitrary_pubs = [
-        {"name": "GUU",
+        {"name": "Brewdog Glasgow",
          "views": "1"},
-        {"name": "QMU",
+        {"name": "The Mallard",
          "views": "2"},
         {"name": "Bar Soba",
          "views": "4"},
