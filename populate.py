@@ -26,7 +26,7 @@ def populate():
          "views": "4"},
         {"name": "West",
          "views": "8"},
-        {"name": "Guiness",
+        {"name": "Guinness",
          "views": "10"},
         {"name": "Stella Artois",
          "views": "13"},
