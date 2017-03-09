@@ -6,7 +6,7 @@ from taps_oan.models import Beer
 from taps_oan.forms import PubForm
 from taps_oan.forms import BeerForm
 from taps_oan.forms import CarrierForm
-from taps_oan.forms import UserForm, UserProfileForm
+from taps_oan.forms import UserForm, UserProfileForm, UpdateProfile
 from django.template.defaultfilters import slugify
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
@@ -14,6 +14,8 @@ from django.http import JsonResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.views.generic.edit import UpdateView
+from django.contrib.auth.models import User
 from datetime import datetime
 import requests
 import json
@@ -362,5 +364,24 @@ def user_login(request):
 def user_logout(request):
     # Since we know the user is logged in, we can now just log them out.
     logout(request)
-    # Take the user back to the homebeer.
+    # Take the user back to the homepage.
     return HttpResponseRedirect(reverse('index'))
+
+def update_profile(request):
+
+    if request.method == 'POST':
+
+        form = UpdateProfile(request.POST, instance=request.user)
+
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('index'))
+    else:
+        usr = User.objects.get(username=request.user)
+
+        initialdata = {'email':usr.email, 'first_name':usr.first_name, 'last_name':usr.last_name}
+    
+        form = UpdateProfile(initial=initialdata)
+
+    context = {'form': form}
+    return render(request, 'taps_oan/account.html', context)

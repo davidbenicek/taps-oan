@@ -10,6 +10,9 @@ Account Settings
 {% block body_block %}
   <h1>Hello, {{request.user.username}}!</h1>
   
-  
+  <form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update" />
+  </form>
 
 {% endblock %}

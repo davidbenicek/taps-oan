@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^logout/$', 
         views.user_logout, name='logout'),
     url(r'^account/$',
-        views.account, name='account'),
+        views.update_profile, name='account'),
     url(r'^yelp/(?P<pub_name>[\w\-]+)/$', 
         views.yelpLookUp, name='yelpLookUp'),
     url(r'^resetConfirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/', views.reset_confirm, name='resetConfirm'),
