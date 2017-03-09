@@ -3,7 +3,7 @@
 
 {% trans "Please go to the following page and choose a new password:" %}
     {% block reset_link %}
-        http://tapsoan.pythonanywhere.com{% url 'resetConfirm' uidb36=uid token=token %}
+        http://tapsoan.pythonanywhere.com{% url 'resetConfirm' uidb64=uid token=token %}
     {% endblock %}
 {% trans "Your username, in case you've forgotten:" %} {{ user.get_username }}
 

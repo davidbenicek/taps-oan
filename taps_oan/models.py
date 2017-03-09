@@ -6,14 +6,9 @@ from allauth.socialaccount.models import SocialAccount
 from django.contrib.auth.models import User
 from allauth.account.models import EmailAddress
 
-from yelpapi import YelpAPI
 
 
-class YelpSearch(models.Model):
-    client_id = 'dWTg7AOcL3n4FiY5PoUQBQ'
-    client_secret = 'ZGXA8JWlX10i9PeI9a0kJZ0lFYNFaWYQYjNhXTcMzEo7pp0F3UiaMot6kMPh109M'
-    yelp_api = YelpAPI(client_id, client_secret)
-    search_results = yelp_api.search_query(term='bar', location='Glasgow', limit=50)
+
 
 
 class Beer(models.Model):

@@ -19,9 +19,9 @@ import requests
 import json
 
 
-def reset_confirm(request, uidb36=None, token=None):
+def reset_confirm(request, uidb64=None, token=None):
     return password_reset_confirm(request, template_name='resetConfirm.html',
-                                  uidb36=uidb36, token=token, post_reset_redirect=reverse('login'))
+                                  uidb64=uidb64, token=token, post_reset_redirect=reverse('login'))
 
 
 def reset(request):
