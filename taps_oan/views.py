@@ -30,11 +30,6 @@ def reset(request):
                           subject_template_name='taps_oan/email_title.html',
                           post_reset_redirect=reverse('login'))
 
-
-def yelp_search(request):
-    context_dict = {}
-
-
 def yelpLookUp(request, pub_name):
     # Sanatize pub_name from slug to readable string
     pub_name = pub_name.replace('-', " ")
