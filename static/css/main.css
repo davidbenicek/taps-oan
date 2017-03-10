@@ -7,7 +7,10 @@
 body {
     margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
-
+ul{
+    padding: 0;
+    list-style-type: none;
+}
 .header-image {
     display: block;
     width: 100%;
