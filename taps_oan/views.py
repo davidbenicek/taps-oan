@@ -12,6 +12,7 @@ from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
 from django.http import JsonResponse
 from django.core.urlresolvers import reverse
+from django.core import serializers
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.views.generic.edit import UpdateView
@@ -57,6 +58,13 @@ def yelpLookUp(request, pub_name):
     # Send back to front end
     return JsonResponse(r.json())
 
+def getPubs(request):
+    pubs = serializers.serialize('json', Pub.objects.order_by('-name'))
+    return HttpResponse(pubs, content_type='json')    
+
+def getBeers(request):
+    beers = serializers.serialize('json', Beer.objects.order_by('-name'))
+    return HttpResponse(beers, content_type='json')    
 
 # A helper method
 def get_server_side_cookie(request, cookie, default_val=None):

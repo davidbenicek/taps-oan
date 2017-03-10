@@ -28,15 +28,36 @@ ul{
     color: red;
 }
 #main_search {
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
     width: 70%;
     height: 45px;
-    margin-top: 20px;
-    border-width: 2px;
-    border-radius: 20px;
-    border-color: rgba(255,255,255,0.9);
-    padding: 10px;
+}
+.chosen-default > span {
+    color:  rgba(0,0,0,0.9);
+    height: 100%;
+    margin: auto;
+    padding-top: 5px;
+    font-size: 20px;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.chosen-default > div{
+    padding: 5px;
+}
+.chosen-default {
+    height: 40px !important;
+    text-align: center !important;
+}
+.group-result {
+    font-size: 20px;
+    padding: 10px !important;
+    text-align: left;
+    color: rgba(0,0,0,0.9);
+}
+.group-option{
+    font-size: 15px;
+    color: rgba(0,0,0,0.9);
+}
+.no-results {
+    font-size: 20px;
 }
 .item_card {
 	text-align: center;

@@ -6,6 +6,10 @@ Index
 {% endblock %}
 
 {% block header_block %}
+  <script type="text/javascript" src='{% static "/js/chosen.jquery.min.js"%}'></script>
+  <script type="text/javascript" src='{% static "/js/search.js"%}'></script>
+    <link href="{% static "css/chosen.min.css" %}" rel="stylesheet">
+
 <!-- Full Width Image Header -->
 <header class="header-image">
   <div class="headline">
@@ -13,7 +17,12 @@ Index
 
       <h1>Taps-Oan</h1>
       <h2>Let the pints flow through ye.</h2>
-      <input id="main_search" type="text" placeholder="Search..."></input>
+      <select id = "main_search" class='chosen-select' data-placeholder="Search for pub or beer..." >
+      <!-- onchange="if (this.selectedIndex) triggerEmployeeRedir();" -->
+          <option></option>
+          <optgroup id="pubGroup" label="Pubs"></optgroup>
+          <optgroup id="beerGroup" label="Beers"></optgroup>
+      </select>
 </div>
   </div>
 </header>

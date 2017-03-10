@@ -24,6 +24,10 @@ urlpatterns = [
         views.update_profile, name='account'),
     url(r'^yelp/(?P<pub_name>[\w\-]+)/$', 
         views.yelpLookUp, name='yelpLookUp'),
+    url(r'^getPubs/$', 
+        views.getPubs, name='getPubs'),
+    url(r'^getBeers/$', 
+        views.getBeers, name='getBeers'),
     url(r'^resetConfirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/', views.reset_confirm, name='resetConfirm'),
     url(r'^pwdReset/', views.reset, name='pwdReset'),
 
