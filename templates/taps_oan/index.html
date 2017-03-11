@@ -2,83 +2,91 @@
 {% load staticfiles %}
 
 {% block title_block %}
-Index
+    Index
 {% endblock %}
 
 {% block header_block %}
-  <script type="text/javascript" src='{% static "/js/chosen.jquery.min.js"%}'></script>
-  <script type="text/javascript" src='{% static "/js/search.js"%}'></script>
+    <script type="text/javascript" src='{% static "/js/chosen.jquery.min.js" %}'></script>
+    <script type="text/javascript" src='{% static "/js/search.js" %}'></script>
     <link href="{% static "css/chosen.min.css" %}" rel="stylesheet">
 
-<!-- Full Width Image Header -->
-<header class="header-image">
-  <div class="headline">
-      <div class="container">
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
 
-      <h1>Taps-Oan</h1>
-      <h2>Let the pints flow through ye.</h2>
-      <select id = "main_search" class='chosen-select' data-placeholder="Search for pub or beer..." >
-      <!-- onchange="if (this.selectedIndex) triggerEmployeeRedir();" -->
-          <option></option>
-          <optgroup id="pubGroup" label="Pubs"></optgroup>
-          <optgroup id="beerGroup" label="Beers"></optgroup>
-      </select>
-</div>
-  </div>
-</header>
+                <h1>Taps-Oan</h1>
+                <h2>Let the pints flow through ye.</h2>
+                <div class="container-fluid">
+
+                    <select id="main_search" class='chosen-select' data-placeholder="Search for pub or beer...">
+                        <!-- onchange="if (this.selectedIndex) triggerEmployeeRedir();" -->
+                        <option></option>
+                        <optgroup id="pubGroup" label="Pubs"></optgroup>
+                        <optgroup id="beerGroup" label="Beers"></optgroup>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
 {% endblock %}
 
 {% block body_block %}
-  <!-- Page Content -->
-<div class="container">
-  <hr class="featurette-divider">
+    <!-- Page Content -->
+    <div class="container">
+        <hr class="featurette-divider">
 
-  <!-- First Featurette -->
-  <div class="featurette" id="about">
-   <div class="float-md-right float-lg-right float-xl-right">
-      {% if pubs %}
-      	{% for pub in pubs %}
-      	<ul class='item_card'>
-                <button type="button" class="btn btn-secondary btn-lg" onclick="window.location='{% url 'show_pub' pub.slug %}'">{{ pub.name }}</button>
-      	</ul>
-      	{% endfor %}
-      {% else %}
-      <ul class='item_card'>
-	       <h1>No pubs...yet!</h1>
-      </ul>
-      {% endif %}
-    <ul class='item_card'>
-      <button class="btn btn-default btn-lg" onclick="window.location='{% url 'add_pub' %}'"><span class="add_pub glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Add Pub</button>
-    </ul>
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
+            <div class="col-lg-6 col-md-6 col-xl-6 float-md-right float-lg-right float-xl-right">
+                {% if pubs %}
+                    {% for pub in pubs %}
+                        <ul class='item_card'>
+                            <button type="button" class="btn btn-secondary btn-lg"
+                                    onclick="window.location='{% url 'show_pub' pub.slug %}'">{{ pub.name }}</button>
+                        </ul>
+                    {% endfor %}
+                {% else %}
+                    <ul class='item_card'>
+                        <h1>No pubs...yet!</h1>
+                    </ul>
+                {% endif %}
+                <ul class='item_card'>
+                    <button class="btn btn-default btn-lg" onclick="window.location='{% url 'add_pub' %}'"><span
+                            class="add_pub glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Add Pub
+                    </button>
+
+                </ul>
+            </div>
+            <h2 class="featurette-heading">Most Popular Pubs</h2>
+            <p class="lead">See the best pubs around you.</p>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Second Featurette -->
+        <div class="featurette" id="services">
+            <div class="col-lg-6 col-md-6 col-xl-6 float-md-right float-lg-right float-xl-right">
+                {% if beers %}
+
+                        {% for beer in beers %}
+                            <ul class='item_card'>
+                                <button type="button" class="btn btn-secondary btn-lg"
+                                        onclick="window.location='{% url 'show_beer' beer.slug %}'">{{ beer.name }}</button>
+                            </ul>
+                        {% endfor %}
+
+                {% else %}
+                    <ul class='item_card'>
+                        <h1>No beer...yet!</h1>
+                    </ul>
+                {% endif %}
+            </div>
+            <h2 class="featurette-heading">Most Liked Beers</h2>
+            <p class="lead">Taste the best beers.</p>
+        </div>
+
     </div>
-    <h2 class="featurette-heading">Most Popular Pubs</h2>
-    <p class="lead">See the best pubs around you.</p>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <!-- Second Featurette -->
-  <div class="featurette" id="services">
-   <div class="float-md-right float-lg-right float-xl-right img-fluid">
-      {% if beers %}
-      <ul>
-	{% for beer in beers %}
-	<ul class='item_card'>
-  <button type="button" class="btn btn-secondary btn-lg" onclick="window.location='{% url 'show_beer' beer.slug %}'">{{ beer.name }}</button>
-	</ul>
-	{% endfor %}
-      </ul>
-      {% else %}
-      <ul class='item_card'>
-	       <h1>No beer...yet!</h1>
-      </ul>
-      {% endif %}	
-    </div>
-    <h2 class="featurette-heading">Most Liked Beers</h2>
-    <p class="lead">Taste the best beers.</p>
-  </div>
-
- </div>
-  <!--<hr class="featurette-divider">-->
+    <!--<hr class="featurette-divider">-->
 
 {% endblock %}

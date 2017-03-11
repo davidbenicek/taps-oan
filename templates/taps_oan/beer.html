@@ -3,91 +3,65 @@
 
 
 {% block title_block %}
-  {% if beer %}
-    {{ beer.name }}
-  {% endif %}
+    {% if beer %}
+        {{ beer.name }}
+    {% endif %}
 {% endblock %}
 
 
 {% block body_block %}
-  <!-- Page Content -->
-  {% if beer %}
-  <!-- Portfolio Item Heading -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">{{ beer.name }}</h1>
-    </div>
-  </div>
-  <!-- /.row -->
-  
-  <!-- Portfolio Item Row -->
-  <div class="row">
-    
-    <div class="col-md-8">
-      {% static "" as baseUrl %}
-      <img class="img-fluid" src="{{baseUrl}}/images/{{beer.slug}}.jpg" alt="">
-    </div>
-    
-    <div class="col-md-4">
-      <h3>You can find this beer in the following pubs:</h3>
-      <ul class="profile_list">
-        {% if pubs %}
-          {% for pub in pubs %}
-          <ul class='item_card'>
-            <button class="btn btn-default btn-lg dark" onclick='window.location="/taps_oan/pub/{{ pub.slug }}"'>{{ pub.name }}</button>
-          </ul>
-          {% endfor %}
-        {% else %}
-        <p><strong>Cannae find a pub</strong></p>
-        {% endif %}
-          <button class="btn btn-default btn-lg" onclick="window.location='{% url 'add_carrier' beer.slug %}'"><span class="add_pub glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Add a Pub that carries this beer!</button>
-      </ul>
-    </div>
-    
-  </div>
-  {% else %}
-  <!-- Portfolio Item Heading -->
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">There's no beer here :(</h1>
-    </div>
-  </div>
-  <!-- /.row -->
-  {% endif %}
-  <!-- /.row -->
-  
-  <!-- Related Projects Row
-       <div class="row">
-	 
-         <div class="col-lg-12">
-           <h3 class="page-header">Related Projects</h3>
-         </div>
-	 
-         <div class="col-sm-3 col-xs-6">
-           <a href="#">
-             <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-           </a>
-         </div>
-	 
-         <div class="col-sm-3 col-xs-6">
-           <a href="#">
-             <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-           </a>
-         </div>
-	 
-         <div class="col-sm-3 col-xs-6">
-           <a href="#">
-             <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-           </a>
-         </div>
-	 
-         <div class="col-sm-3 col-xs-6">
-           <a href="#">
-             <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-           </a>
+    <!-- Page Content -->
+    {% if beer %}
+        <hr>
+        <!-- Portfolio Item Heading -->
+        <div class="col-lg-12 pub_heading">
+            <h1 class="page-header">{{ beer.name }}</h1>
+        </div>
+
+        <!-- /.row -->
+        <hr class="featurette-divider-sm">
+        <!-- Portfolio Item Row -->
+        <div class="row">
+
+        <div class="col-md-8 col-lg-8 col-xl-8">
+            {% static "" as baseUrl %}
+            <img class="img-fluid" style="width: 90%" src="{{ baseUrl }}/images/{{ beer.slug }}.jpg" alt="">
+        </div>
+        <div class="col-md-4 col-lg-4 col-xl-4">
+            <h3>You can find this beer in the following pubs:</h3>
+            <ul class="item_card">
+                {% if pubs %}
+                    {% for pub in pubs %}
+                        <ul class='item_card'>
+                            <button class="btn btn-default btn-lg dark"
+                                    onclick='window.location="/taps_oan/pub/{{ pub.slug }}"'>{{ pub.name }}</button>
+                        </ul>
+                    {% endfor %}
+                {% else %}
+                    <p><strong>Cannae find a pub</strong></p>
+                {% endif %}
+
+                <button class="btn  btn-default btn-lg"
+                        onclick="window.location='{% url 'add_carrier' beer.slug %}'"><span
+                        class="add_pub glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Add a Pub that
+                    carries this beer!
+                </button>
+            </ul>
+        </div>
+
+
+    {% else %}
+        <!-- Portfolio Item Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">There's no beer here :(</h1>
             </div>
-	 
-       </div>
-       /.row -->
-  
+        </div>
+        <!-- /.row -->
+    {% endif %}
+<!-- /.row -->
+</div>
+    <hr class="featurette-divider">
+
+
 {% endblock %}
