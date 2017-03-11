@@ -28,7 +28,7 @@ $(document).ready(function() {
 					    }));
 					});
 					//Apply library to sort the search
-					$("#main_search").chosen({no_results_text: "Oops, nothing found!"}).change(search_trigger);; 
+					$("#main_search").chosen({no_results_text: "Oops, nothing found!", width: "70%"}).change(search_trigger);; 
 				})
 		})
 })		

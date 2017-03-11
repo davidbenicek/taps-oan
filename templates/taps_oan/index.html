@@ -38,6 +38,10 @@
 
         <!-- First Featurette -->
         <div class="featurette" id="about">
+			<div class="col-lg-6 col-md-6 col-xl-6 float-md-left float-lg-left float-xl-left">
+				<h2 class="featurette-heading">Most Popular Pubs</h2>
+				<p class="lead">See the best pubs around you.</p>
+			</div>
             <div class="col-lg-6 col-md-6 col-xl-6 float-md-right float-lg-right float-xl-right">
                 {% if pubs %}
                     {% for pub in pubs %}
@@ -58,14 +62,16 @@
 
                 </ul>
             </div>
-            <h2 class="featurette-heading">Most Popular Pubs</h2>
-            <p class="lead">See the best pubs around you.</p>
         </div>
 
         <hr class="featurette-divider">
 
         <!-- Second Featurette -->
         <div class="featurette" id="services">
+			<div class="col-lg-6 col-md-6 col-xl-6 float-md-left float-lg-left float-xl-left">
+		    <h2 class="featurette-heading">Most Liked Beers</h2>
+            <p class="lead">Taste the best beers.</p>
+			</div>
             <div class="col-lg-6 col-md-6 col-xl-6 float-md-right float-lg-right float-xl-right">
                 {% if beers %}
 
@@ -82,8 +88,6 @@
                     </ul>
                 {% endif %}
             </div>
-            <h2 class="featurette-heading">Most Liked Beers</h2>
-            <p class="lead">Taste the best beers.</p>
         </div>
 
     </div>
