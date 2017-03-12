@@ -14,6 +14,7 @@ class PubForm(forms.ModelForm):
         model = Pub
         fields = ('name',)
 
+
 class UserForm(forms.ModelForm):
 
     password = forms.CharField(widget=forms.PasswordInput())
@@ -23,7 +24,7 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password','first_name', 'last_name')
+        fields = ('username', 'email', 'password', 'first_name', 'last_name')
 
 
 class UserProfileForm(forms.ModelForm):
@@ -41,10 +42,11 @@ class BeerForm(forms.Form):
 
 
 class CarrierForm(forms.Form):
-    name = forms.CharField(max_length=128, help_text="Please enter the title of the beer carrier.")
+    name = forms.CharField(max_length=128, help_text="Please enter the name of the pub.")
 
     class Meta:
         fields = ('name')
+
 
 class UpdateProfile(forms.ModelForm):
     email = forms.EmailField(required=False)

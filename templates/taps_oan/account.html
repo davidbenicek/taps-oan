@@ -3,16 +3,25 @@
 
 
 {% block title_block %}
-Account Settings
+    Account Settings
 {% endblock %}
 
 
+
 {% block body_block %}
-  <h1>Hello, {{request.user.username}}!</h1>
-  
-  <form action="" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Update" />
-  </form>
+    <hr>
+    <div class="col-lg-12 pub_heading">
+        <h1 class="page-header">Hello, {{ request.user.username }}!</h1>
+    </div>
+    <hr class="featurette-divider-sm">
+<div class="container-fluid">
+    <div class="form-group">
+        <form action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Update"/>
+        </form>
+    </div>
+        </div>
+    <hr class="featurette-divider-sm">
 
 {% endblock %}

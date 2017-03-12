@@ -33,6 +33,7 @@ def reset(request):
                           subject_template_name='taps_oan/email_title.html',
                           post_reset_redirect=reverse('login'))
 
+
 def yelpLookUp(request, pub_name):
     # Sanatize pub_name from slug to readable string
     pub_name = pub_name.replace('-', " ")
@@ -58,13 +59,16 @@ def yelpLookUp(request, pub_name):
     # Send back to front end
     return JsonResponse(r.json())
 
+
 def getPubs(request):
     pubs = serializers.serialize('json', Pub.objects.order_by('-name'))
-    return HttpResponse(pubs, content_type='json')    
+    return HttpResponse(pubs, content_type='json')
+
 
 def getBeers(request):
     beers = serializers.serialize('json', Beer.objects.order_by('-name'))
-    return HttpResponse(beers, content_type='json')    
+    return HttpResponse(beers, content_type='json')
+
 
 # A helper method
 def get_server_side_cookie(request, cookie, default_val=None):
@@ -370,8 +374,8 @@ def user_logout(request):
     # Take the user back to the homepage.
     return HttpResponseRedirect(reverse('index'))
 
-def update_profile(request):
 
+def update_profile(request):
     if request.method == 'POST':
 
         form = UpdateProfile(request.POST, instance=request.user)
@@ -382,8 +386,8 @@ def update_profile(request):
     else:
         usr = User.objects.get(username=request.user)
 
-        initialdata = {'email':usr.email, 'first_name':usr.first_name, 'last_name':usr.last_name}
-    
+        initialdata = {'email': usr.email, 'first_name': usr.first_name, 'last_name': usr.last_name}
+
         form = UpdateProfile(initial=initialdata)
 
     context = {'form': form}
