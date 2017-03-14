@@ -38,10 +38,10 @@ ALLOWED_HOSTS = []
 LOGIN_URL = '/taps_oan/login/'
 
 EMAIL_USE_SSL = True
-EMAIL_HOST = 'smtp.yandex.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'tapsoan@yandex.com'
-EMAIL_HOST_PASSWORD = 'wantbeer'
+EMAIL_HOST_USER = 'tapsoan@gmail.com'
+EMAIL_HOST_PASSWORD = 'poppop12'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
 # Application definition
