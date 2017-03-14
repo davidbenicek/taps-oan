@@ -36,19 +36,19 @@
         <!-- Portfolio Item Row -->
 
         <div class="row">
-            <div class="col-md-6 col-lg-6 col-xl-6">
+            <div class="col-md-6 col-lg-6 col-xl-6 pic_container">
                 <img class="img-fluid" id="pub_pic"
                      src="https://s-media-cache-ak0.pinimg.com/originals/0a/59/71/0a59718a5ee79a0558930ca9907c0659.gif"
                      alt="">
             </div>
 
-            <div class="col-md-4 col-lg-4 col-xl-4 ">
+            <div class="col-md-4 col-lg-4 col-xl-4 item_list">
                 <h3>Beers in this pub</h3>
                 <ul class="item_card">
                     {% if beers %}
                         {% for beer in beers %}
                             <ul class='item_card'>
-                                <button class="btn btn-default btn-lg dark"
+                                <button class="btn btn-secondary btn-lg""
                                         onclick='window.location="/taps_oan/beer/{{ beer.slug }}/"'>{{ beer.name }}</button>
                             </ul>
                         {% endfor %}

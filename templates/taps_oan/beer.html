@@ -23,17 +23,17 @@
         <!-- Portfolio Item Row -->
         <div class="row">
 
-        <div class="col-md-8 col-lg-8 col-xl-8">
+        <div class="col-md-8 col-lg-8 col-xl-8 pic_container">
             {% static "" as baseUrl %}
-            <img class="img-fluid" style="width: 90%" onerror="this.src='{% static generic_beer.jpg %}'" src="{{ baseUrl }}images/{{ beer.slug }}.jpg" alt="">
+            <img class="img-fluid" style="width: 90%" onerror="this.src='{% static '/images/generic_beer.jpg' %}'" src="{{ baseUrl }}images/{{ beer.slug }}.jpg" alt="">
         </div>
-        <div class="col-md-4 col-lg-4 col-xl-4">
+        <div class="col-md-4 col-lg-4 col-xl-4 item_list">
             <h3>You can find this beer in the following pubs:</h3>
             <ul class="item_card">
                 {% if pubs %}
                     {% for pub in pubs %}
                         <ul class='item_card'>
-                            <button class="btn btn-default btn-lg dark"
+                            <button class="btn btn-secondary btn-lg"
                                     onclick='window.location="/taps_oan/pub/{{ pub.slug }}"'>{{ pub.name }}</button>
                         </ul>
                     {% endfor %}

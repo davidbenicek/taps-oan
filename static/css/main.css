@@ -24,6 +24,10 @@ body {
 .closed_pub {
     color: red;
 }
+.item_list {
+    margin-right: auto;
+    margin-left: auto;
+}
 #main_search {
     width: 70%;
     height: 45px;
@@ -78,6 +82,9 @@ body {
 	transform: translate3d(0, 0, 0);
 	backface-visibility: hidden;
 	perspective: 1000px;
+}
+.pic_container {
+    max-width: 750px;
 }
 .dark {
     background-color: rgb(192, 192, 192);
